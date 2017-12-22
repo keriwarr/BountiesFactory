@@ -1,30 +1,21 @@
 import React, { Component } from 'react'
-import './AppContainer.css'
-
 import Web3 from 'web3';
 import Select from 'react-select';
-
-
-const web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io"));
-const json = require('../../../contracts.json');
-
-
-
-const IPFS = require('ipfs-mini');
-const ipfs = new IPFS({ host: 'ipfs.infura.io', port: 5001, protocol: 'https'});
-const BN = require(`bn.js`);
-const utf8 = require('utf8');
-
-import logo from './images/logo.svg';
+import IPFS from'ipfs-mini';
+import BN from 'bn.js';
 import FlatButton from 'material-ui/FlatButton';
-import BountiesFacts from 'components/BountiesFacts/BountiesFacts';
-
-import ContractList from 'components/ContractList/ContractList';
-
 import Dialog from 'material-ui/Dialog';
 import SvgArrow from 'material-ui/svg-icons/hardware/keyboard-arrow-right';
 
+import './AppContainer.css'
+import logo from './images/logo.svg';
+import ContractList from 'components/ContractList/ContractList';
+import json from '../../../contracts.json';
+import utf8 from 'utf8';
 
+
+const web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io"));
+const ipfs = new IPFS({ host: 'ipfs.infura.io', port: 5001, protocol: 'https'});
 const CATEGORIES = [
   { label: 'Code', value: 'Code' },
   { label: 'Bugs', value: 'Bugs' },
@@ -37,7 +28,7 @@ const CATEGORIES = [
 ];
 
 
-class AppContainer extends Component {
+export default class AppContainer extends Component {
   constructor(props) {
     super(props)
 
@@ -804,5 +795,3 @@ class AppContainer extends Component {
     )
   }
 }
-
-export default AppContainer
