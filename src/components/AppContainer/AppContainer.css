@@ -828,3 +828,334 @@ background: -webkit-linear-gradient(top, #385a74 0%,#274254 100%); /* Chrome10-2
 background: linear-gradient(to bottom, #385a74 0%,#274254 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#385a74', endColorstr='#274254',GradientType=0 ); /* IE6-9 */
 }
+
+.AppContainer .container {
+  min-height: 100vh;
+  position: relative;
+}
+
+.AppContainer .CornerEmoji {
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  display: block;
+  overflow: hidden;
+  width: 100px;
+}
+
+.AppContainer .CornerEmoji .emoji {
+  height: 28px;
+  width: 28px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  float: left;
+}
+
+.AppContainer #colourBodyLight .CornerEmoji .emoji {
+  background-image: url("./images/DarkMoon.png");
+}
+
+.AppContainer #colourBodyDark .CornerEmoji .emoji {
+  background-image: url("./images/LightMoon.png");
+}
+
+.AppContainer .navBar {
+  overflow: hidden;
+}
+
+.AppContainer .navBar .home-button {
+  width: 276px;
+  overflow: hidden;
+  display: block;
+  padding: 1em 0em 1em 0em;
+  margin: 0 auto;
+}
+
+.AppContainer .navBar .home-button .logo {
+  background-image: url("./images/logo.svg");
+  height: 3em;
+  width: 14em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  float: left;
+  margin-left: 57px;
+}
+
+.AppContainer .navBar .background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  box-shadow: inset rgba(255, 255, 255, 0.6) 0 2px 2px, inset rgba(0, 0, 0, 0.3) 0 -2px 6px;
+}
+
+.AppContainer .navBar .new-bounty-button {
+  background-color: rgba(0,0,0,0) !important;
+  border: 1px solid #16e5cd !important;
+  color: #16e5cd !important;
+  width: 150px !important;
+  float: right !important;
+  height: 30px !important;
+  line-height: 30px !important;
+  position: absolute !important;
+  top: 25px !important;
+  right: 30px !important;
+}
+
+.AppContainer .main {
+  display: block;
+  overflow: hidden;
+  width: 1100px;
+  margin: 0 auto;
+  padding-bottom: 120px;
+}
+
+.AppContainer .main .profile {
+  width: 245px;
+  float: left;
+  display: block;
+  margin-right: 15px;
+}
+
+.AppContainer .main .profile h3 {
+  font-family: 'Open Sans';
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  width: 100%;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.AppContainer #colourBodyLight .main .profile h3 {
+  color: rgb(25, 55, 83);
+}
+
+.AppContainer #colourBodyDark .main .profile h3 {
+  color: white;
+}
+
+.AppContainer .main .profile .profile-details {
+  display: block;
+  width: 215px;
+  overflow: hidden;
+  margin-top: 15px;
+  padding: 15px;
+  min-height: 237px;
+}
+
+.AppContainer #colourBodyLight .main .profile .profile-details {
+  background-color: rgb(249, 249, 249);
+}
+
+.AppContainer #colourBodyDark .main .profile .profile-details {
+  background-color: rgba(10, 22, 40, 0.5);
+}
+
+.AppContainer .main .profile .profile-details .bounties-total {
+  font-family: Open Sans;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 100%;
+  font-weight: 500;
+  text-align: center;
+  line-height: 24px;
+}
+
+.AppContainer .main .profile .profile-details .bounties-total b {
+  color: #16e5cd;
+  font-size: 24px;
+}
+
+.AppContainer .main .profile .profile-details .category-totals {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #16e5cd;
+  display: block;
+  overflow: hidden;
+}
+
+.AppContainer .main .profile .profile-details .category-totals .top-category {
+  width: 33%;
+  float: left;
+  display: block;
+}
+
+.AppContainer .main .profile .profile-details .category-totals .bottom-category {
+  width: 50%;
+  float: left;
+  display: block;
+}
+
+.AppContainer .main .profile .profile-details .category-totals .top-category .category-count {
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+.AppContainer .main .profile .profile-details .category-totals .bottom-category .category-count {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.AppContainer .main .profile .profile-details .category-totals .category-count {
+  font-family: 'Open Sans';
+  text-align: center;
+  width: 100%;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.AppContainer .main .profile .profile-details .category-totals .category-count b {
+  font-size: 24px;
+}
+
+.AppContainer .main .profile .profile-details .category-totals .category-name {
+  font-family: 'Open Sans';
+  margin-top: 0px;
+  margin-bottom: 15px;
+  text-align: center;
+  width: 100%;
+  font-weight: 500;
+}
+
+.draft-color {
+  color: rgb(255, 186, 20);
+}
+
+.active-color {
+  color: rgb(140, 226, 88);
+}
+
+.dead-color {
+  color: #ff6846;
+}
+
+.expired-color {
+  color: rgb(104, 166, 166);
+}
+
+.completed-color {
+  color: rgb(255, 222, 70);
+}
+
+.blue-divider-right {
+  border-right: 1px solid #16e5cd;
+}
+
+.AppContainer .main .profile .profile-details .profile-button {
+  width: 100% !important;
+  background-color: rgba(1, 1, 1, 0.05) !important;
+  margin-top: 15px !important;
+}
+
+.AppContainer #colourBodyLight .main .profile .profile-details .profile-button {
+  color: #193753 !important;
+}
+
+.AppContainer #colourBodyDark .main .profile .profile-details .profile-button {
+  color: white !important;
+}
+
+.AppContainer #colourBodyLight .main .profile .profile-details .category-totals .category-count {
+  color: #193753;
+}
+
+.AppContainer #colourBodyDark .main .profile .profile-details .category-totals  .category-count {
+  color: white;
+}
+
+.AppContainer #colourBodyLight .main .profile .profile-details .bounties-total {
+  color: #193753;
+}
+
+.AppContainer #colourBodyDark .main .profile .profile-details .bounties-total {
+  color: white;
+}
+
+.AppContainer .main .profile .profile-details .no-account-warning h5 {
+  font-family: 'Open Sans';
+  margin-bottom: 15px;
+  width: 100%;
+  text-align: center;
+}
+
+.AppContainer .main .profile .profile-details .no-account-warning .no-account-header {
+  margin-top: 35px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.AppContainer .main .profile .profile-details .no-account-warning .no-account-explanation {
+  margin-top: 15px;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.AppContainer .main .profile .profile-details .no-account-warning .no-account-metamask {
+  margin-top: 15px;
+  font-weight: 300;
+  font-size: 14px;
+  padding-top: 15px;
+  border-top: 1px solid #16e5cd;
+}
+
+.AppContainer .main .profile .profile-details .no-account-warning .metamask-link {
+  color: #16e5cd;
+  font-weight: 700;
+}
+
+.AppContainer #colourBodyLight .main .profile .profile-details .no-account-warning h5 {
+  color: #8a8a8a;
+}
+
+.AppContainer #colourBodyDark .main .profile .profile-details .no-account-warning h5 {
+  color: white;
+}
+
+.AppContainer .main .profile .signup-cta {
+  font-family: 'Open Sans', margin-top: '35px', margin-bottom: '15px', color: this.state.lightMode ? 'rgb(25, 55, 83)' : 'rgb(208,208,208)', width: '100%', fontWeight: '600', textAlign: 'center', fontSize: '14px'
+}
+
+.AppContainer .main .bounties {
+  width: 630px;
+  float: left;
+  display: block;
+}
+
+.AppContainer .main .filter {
+  width: 195px;
+  float: left;
+  display: block;
+  margin-left: 15px;
+}
+
+.AppContainer .footer {
+  text-align: center;
+  display: block;
+  font-size: 10px;
+  padding: 15px 0px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+}
+
+.AppContainer .footer .consensys-link {
+  text-decoration: none;
+}
+
+.AppContainer #colourBodyLight .footer,
+.AppContainer #colourBodyLight .footer .consensys-link,
+.AppContainer #colourBodyLight .footer .privacy-policy-link,
+.AppContainer #colourBodyLight .footer .terms-link {
+  color: rgb(25, 55, 83);
+}
+
+.AppContainer #colourBodyDark .footer,
+.AppContainer #colourBodyDark .footer .privacy-policy-link,
+.AppContainer #colourBodyDark .footer .terms-link {
+  color: rgba(256,256,256,0.75);
+}
+
+#colourBodyDark .AppContainer .footer .consensys-link {
+  color: #16e5cd;
+}

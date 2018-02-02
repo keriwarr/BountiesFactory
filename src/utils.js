@@ -1,3 +1,7 @@
+import utf8 from 'utf8'
+import R from 'ramda'
+import request from 'browser-request'
+
 export const dateToString = (date) => {
   const oneMillenium = 31556952000000
   const oneCentury = 3155695200000
@@ -9,7 +13,7 @@ export const dateToString = (date) => {
   const oneHour = 3600000
   const oneMinute = 60000
   const oneSecond = 1000
-  const difference = date - Date.now()
+  let difference = date - Date.now()
   if (difference > 0) {
     if (difference >= oneMillenium) {
       const num = parseInt(difference / oneMillenium)
@@ -117,4 +121,38 @@ export const dateToString = (date) => {
   } else {
     return 'now'
   }
+}
+
+export const toUTF8 = (hex) => {
+  // Find termination
+  let str = ''
+  let i = 0
+  const l = hex.length
+  if (hex.substring(0, 2) === '0x') {
+    i = 2
+  }
+  for (; i < l; i += 2) {
+    var code = parseInt(hex.substr(i, 2), 16)
+    if (code === 0) { break }
+    str += String.fromCharCode(code)
+  }
+
+  return utf8.decode(str)
+}
+
+export const getPrices = (callback) => {
+  request(
+    'https://api.coinmarketcap.com/v1/ticker/?convert=USD&limit=100',
+    function (error, response, body) {
+      if (error) {
+        callback(null)
+      }
+      try {
+        const data = JSON.parse(body)
+        callback(R.pick(['symbol', 'price_usd'], data))
+      } catch (e) {
+        callback(null)
+      }
+    }
+  )
 }
